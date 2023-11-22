@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 :root {
     --primary:rgb(58, 35, 142);
-    --bg-white: rgb(245, 245, 245);
     --bg-gray: rgb(64, 64, 64);
     --bg-primary: var(--primary);
     --bg-hover: rgba(64, 64, 64, 0.06);
@@ -110,7 +109,7 @@ Bloque header
 **/
 body {
     padding-top: 60px;
-    background: var(--bg-white)
+    background: var(--bg-gray)
 }
 .header {
     position: fixed;
@@ -157,6 +156,8 @@ body {
 .header__box {
     display: flex;
     margin-left: auto;
+    background: red;
+    gap: 10px;
 }
 /**
 Bloque inputs group
@@ -234,17 +235,7 @@ Botonera registro
 /**
 Content Layout
 **/
-.content-layout {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    grid-template-areas: 'main';
-    gap: 1rem;
-    padding: 1rem;
-}
+
 .navbar {
     display: none;
 }
@@ -320,11 +311,188 @@ CREACION DE LAS ETIQUETAS PROPIAS
 /** 
     Mediaquery de tablet
 **/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Globales */
+.Layout{
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: 'main';
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.aside{
+    grid-area: aside;
+    display: none;
+    height: auto;
+}
+.navbar{
+    grid-area: navbar;
+    display: none;
+    height: auto;
+}
+.main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+/* Componente 1 */
+.CARDD{
+    padding: 10px;
+    /* background: rebeccapurple; */
+    border-radius: 10px;
+    background-color: white;
+    height: auto;
+}
+/* Variacion 1 */
+.CARDD-flex{
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+/* Variacion 2 */
+.CARDD-color-white{
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+/* Variacion 3 */
+.Card-padding-link{
+    padding: 10px 0px 10px 0px;
+}
+.Card-padding-top-right-bottom{
+    padding: 10px 10px 10px ;
+}
+
+
+
+
+/* Componente 2 */
+
+.btn_login{
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+.btn_login:hover{
+    background-color: var(--bg-primary);
+    color: var(--white);
+}
+.btn_login--margin{
+    margin-bottom: 10px;
+}
+
+/* Componente 3 */
+.CARDD_3{
+    padding: 10px;
+    display: block;
+    width: 100%;
+}
+
+/* Variacion 1 */
+.CARDD_3__Border-sup{
+    border-top: 1px solid black;
+}
+/* Variacion 2 */
+.CARDD_3__Button{
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    color: var(--bg-gray);
+    display: block;
+    border-radius: 10px;
+}
+/* Hover */
+.CARDD_3__Button:hover {
+    color: var(--bg-gray);
+    background: var(--bg-hover);
+}
+
+/* Variacion 3 */
+.List-none{
+    list-style: none;
+}
+
+
+/* Componente 4 */
+.Tag{
+    text-decoration: none;
+    color: var(--bg-gray);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: var(--size-1);
+}
+
+/* Hover */
+.Tag:hover{
+    background-color: var(--bg-hover);
+    color: var(--bg-primary);
+}
+
+
+/* Componente 5 */
+
+.btn_register{
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--bg-primary);
+    color: var(--white);
+}
+.btn_register:hover{
+    background-color: var(--white);
+    color: var(--bg-primary);
+    border: solid var(--bg-primary) 1px;
+}
+
+
+/* .CARDD_2{
+    padding: 10px 0px 10px 0px ;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid black;
+} */
+
+
+
 @media (min-width: 780px) {
     .navbar {
         display: block;
     }
-    .content-layout {
+    .Layout {
         grid-template-rows: auto;
         grid-template-columns: 220px auto;
         grid-template-areas: 'navbar main';
@@ -346,12 +514,12 @@ CREACION DE LAS ETIQUETAS PROPIAS
     .btn__login {
         display: block;
     }
-    .sidebar {
+    .aside {
         display: block;
     }
-    .content-layout {
+    .Layout {
         grid-template-rows: auto;
         grid-template-columns: 240px 2fr 1fr;
-        grid-template-areas: 'navbar main sidebar';
+        grid-template-areas: 'navbar main aside';
     }
 }
